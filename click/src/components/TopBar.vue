@@ -7,7 +7,7 @@
             <div class=" w-[40px] flex justify-center items-center"><i
 class="cursor-pointer text-[#222] pi pi-pencil"></i>
             </div>
-            <div class=" w-[40px] border-x-[2px] border-gray-300 mx-2  flex justify-center items-center "><i class="pi pi-moon  text-[#222]"></i>
+            <div class=" w-[40px] border-x-[2px] border-gray-300 mx-2 flex justify-center items-center "><i class="pi pi-moon  text-[#222]"></i>
             </div>
             <div class="w-[40px] flex justify-center items-center"><i class="pi pi-link cursor-pointer  text-[#222] "></i>
             </div>

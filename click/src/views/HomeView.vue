@@ -1,13 +1,13 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-import TopBar from '@/components/Topbar.vue';
-import mainDashboard from '@/components/mainDashboard.vue';
+import TopBar from "@/components/TopBar.vue";
+import mainDashboard from "@/views/mainDashboard.vue";
 </script>
 
 <template>
-  <main>
+  <div class=" h-[100vh]  overflow-hidden" >
     <TopBar />
-    <mainDashboard/>
-    <!-- <TheWelcome /> -->
-  </main>
+    <main class="h-[95vh] overflow-x-auto" >
+      <mainDashboard />
+    </main> 
+  </div>
 </template>
