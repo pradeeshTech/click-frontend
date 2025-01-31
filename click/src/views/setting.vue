@@ -7,7 +7,7 @@
         <h1 class="text-[#fff] text-[28px] text-center my-2">Click</h1>
 
         <ul
-          class="border-[1px] border-[#ddd] flex flex-col justify-start p-4 text-[#fff]"
+          class=" flex flex-col justify-start p-4 text-[#fff]"
         >
         <router-link
                   to="/setting/profile"

@@ -26,7 +26,7 @@
 
       <div class="relative mx-2 dropdown">
         <router-link
-            to="/setting"
+            to="/setting/profile"
             class="p-2 hover:bg-[#eff4ff] rounded-md cursor-pointer block"
           >
             <i class="pi pi-cog mx-2 cursor-pointer" ></i>
