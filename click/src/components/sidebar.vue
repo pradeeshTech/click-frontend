@@ -258,7 +258,7 @@
                   />
                   <span class="mx-2"> {{ item.name }}</span>
                 </div>
-                <i class="pi pi-trash text-red-500"></i>
+                <i class="pi pi-trash text-red-500" @click="deleteItem(index)" ></i>
               </li>
             </ul>
             <div v-else class="flex justify-center items-center h-[100%]">
@@ -381,18 +381,26 @@ const items = ref([
 
 let draggedItemIndex = null;
 
+// Handle drag start
 const onDragStart = (index) => {
   draggedItemIndex = index;
 };
 
+// Handle drop
 const onDrop = (index) => {
   if (draggedItemIndex === null) return;
 
   const draggedItem = items.value[draggedItemIndex];
-  items.value.splice(draggedItemIndex, 1);
-  items.value.splice(index, 0, draggedItem);
+  items.value.splice(draggedItemIndex, 1); // Remove dragged item from original position
+  items.value.splice(index, 0, draggedItem); // Insert at new position
   draggedItemIndex = null;
 };
+
+// Handle delete
+const deleteItem = (index) => {
+  items.value.splice(index, 1);
+};
+
 
 //
 

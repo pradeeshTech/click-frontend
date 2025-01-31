@@ -19,6 +19,23 @@ const router = createRouter({
       name: 'userPanel',
       component:()=> import('@/views/userPanel.vue')
       // component: HomeView,
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component:()=> import('@/views/setting.vue'),
+      children: [
+        {
+          path: 'profile', // This will resolve to '/setting/profile'
+          name: 'setting-profile',
+          component: () => import('@/views/profile.vue'),
+        },
+        {
+          path: 'plan-details', // This will resolve to '/setting/plan-details'
+          name: 'setting-plan-details',
+          component: () => import('@/views/viewPlan.vue'),
+        },
+      ],
     }
   ],
 })

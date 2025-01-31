@@ -22,8 +22,8 @@
               class="slide w-full flex-shrink-0"
             >
               <img
-                :src="`${image}`"
-                class="w-full h-auto !object-fill"
+                :src="image"
+                class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
                 alt="Carousel Image"
               />
             </div>
@@ -62,9 +62,7 @@
           <div
             class="skeleton-container h-[30px] rounded-lg w-[20%] flex justify-center"
           >
-            <h1 class="text-center text-[32px]" @click="toggleSidebar">
-              How it works
-            </h1>
+            <h1 class="text-center text-[32px]">How it works</h1>
             <!-- <div class="skeleton mr-2 rounded-lg"></div> -->
           </div>
           <div
@@ -76,23 +74,26 @@
             </p>
           </div>
         </div>
-        <div
-          class="my-2 grid grid-cols-3 gap-6 mx-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1"
-        >
-          <!-- Skeleton loader -->
-          <adminCard />
-          <adminCard />
-          <adminCard />
+        <!-- {{ useTopBar.sidebarOpen }} -->
+        <div class="flex justify-center items-center">
+          <div
+            class="my-2 grid grid-cols-3 gap-20 mx-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 !w-[80%] border-[1px] border-[#0000]"
+          >
+            <!-- Skeleton loader -->
+            <adminCard />
+            <adminCard />
+            <adminCard />
 
-          <adminCard />
-          <adminCard />
-          <adminCard />
-          <!-- <div class="skeleton-container h-[300px]">
+            <adminCard />
+            <adminCard />
+            <adminCard />
+            <!-- <div class="skeleton-container h-[300px]">
             <div class="skeleton mr-2 rounded-lg"></div>
           </div> -->
-          <!-- <div class="skeleton-container h-[300px]">
+            <!-- <div class="skeleton-container h-[300px]">
             <div class="skeleton mr-2 rounded-lg"></div>
           </div> -->
+          </div>
         </div>
       </div>
       <!-- <div class="col-span-1 bg-slate-100 p-2 overflow-hidden max-[600px]:hidden ">
@@ -104,7 +105,7 @@
         <!-- Sidebar -->
         <div
           class="fixed top-0 right-0 h-full bg-gray-100 shadow-lg transform transition-transform duration-300 z-[45]"
-          :class="sidebarOpen ? 'translate-x-0' : 'translate-x-full'"
+          :class="useTopBar.sidebarOpen ? 'translate-x-0' : 'translate-x-full'"
           style="width: 680px"
         >
           <div
@@ -112,7 +113,7 @@
           >
             <h2 class="text-lg font-semibold">Sidebar</h2>
             <button
-              @click="toggleSidebar"
+              @click="useTopBar.toggleSidebar"
               class="text-gray-500 hover:text-gray-700 focus:outline-none"
             >
               ✖
@@ -122,14 +123,13 @@
           <div class="p-4">
             <sidebar />
           </div>
-          
         </div>
 
         <!-- Overlay -->
         <div
-          v-if="sidebarOpen"
+          v-if="useTopBar.sidebarOpen"
           class="fixed inset-0 bg-black bg-opacity-50 z-40"
-          @click="toggleSidebar"
+          @click="useTopBar.toggleSidebar"
         ></div>
       </div>
 
@@ -142,10 +142,13 @@
 import { ref } from "vue";
 import sidebar from "@/components/sidebar.vue";
 import adminCard from "@/components/card/adminCard.vue";
+import { useTopBarStore } from "@/stores/topbar";
+
+const useTopBar = useTopBarStore();
 
 // Array of images for the carousel
 const images = [
-  "/imgs/Frame 1000002895.png",
+  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F236047%2Fpexels-photo-236047.jpeg%3Fcs%3Dsrgb%26dl%3Dclouds-cloudy-countryside-236047.jpg%26fm%3Djpg&f=1&nofb=1&ipt=6b2eb5ccab7a0c6787f20167fcf73400772e8d96efe15960c036247ce945dde6&ipo=images",
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.EoVQuRwQe3tf6acMyDluQwHaDj%26pid%3DApi&f=1&ipt=3867412798f5f20fbdbc6ca70c4bff4cbec3eea4498ec8ff5bea464dd346802c&ipo=images",
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F236047%2Fpexels-photo-236047.jpeg%3Fcs%3Dsrgb%26dl%3Dclouds-cloudy-countryside-236047.jpg%26fm%3Djpg&f=1&nofb=1&ipt=6b2eb5ccab7a0c6787f20167fcf73400772e8d96efe15960c036247ce945dde6&ipo=images",
 ];
