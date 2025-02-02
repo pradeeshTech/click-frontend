@@ -1,14 +1,14 @@
 <template>
   <div className=" m-[20px] flex justify-between items-start h-[140px] ">
-    <div className=" flex justify-start items-center ">
-      <div className=" ">
+    <div className=" flex justify-start items-center">
+      <div className="">
         <h1>Avatar Name</h1>
-        <div className=" h-[100px] w-[100px] bg-green-300 rounded-full "></div>
+        <div className=" h-[80px] w-[80px] bg-green-300 rounded-full flex justify-center items-center text-[24px]  ">PA</div>
       </div>
 
-      <div className="">
-        <h1>Pradeesh.A</h1>
-        <p>Pradeeshtech0@gmail.com</p>
+      <div className=" mx-2">
+        <h1 class=" text-[24px] " >Pradeesh.A</h1>
+        <p class=" text-[16px] " >Pradeeshtech0@gmail.com</p>
       </div>
     </div>
 

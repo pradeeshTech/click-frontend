@@ -15,10 +15,21 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
     {
-      path: '/userPanel/id=:id',
+      path: '/userPanel/id?',
       name: 'userPanel',
       component:()=> import('@/views/userPanel.vue')
       // component: HomeView,
+    },
+    {
+      path: '/notFound',
+      name: 'notFound',
+      component:()=> import('@/components/NotFound.vue')
+      // component: HomeView,
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'notFound',
+      component: () => import('@/components/NotFound.vue')
     },
     {
       path: '/setting',

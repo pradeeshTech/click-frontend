@@ -1,5 +1,6 @@
 <template>
-  <section class="main-layout overflow-hidden">
+  <div>
+  <section class="main-layout overflow-hidden"  >
     <!-- header -->
     <div class="grid grid-cols-4 h-[95vh]">
       <div class="col-span-4 overflow-y-auto max-[600px]:col-span-4">
@@ -136,23 +137,28 @@
       <!--  -->
     </div>
     <!--  -->
+    {{ userId }}
   </section>
+</div>
 </template>
 <script setup >
-import { ref } from "vue";
+
+import { ref, computed } from "vue";
 import sidebar from "@/components/sidebar.vue";
 import adminCard from "@/components/card/adminCard.vue";
 import { useRoute } from "vue-router";
-import useTopBarStore from "../stores/topbar";
+import {useTopBarStore} from "../stores/topbar";
 
 const useTopBar =  useTopBarStore();
 
 const route = useRoute();
-const userId = route.params.id;
+// const userId = computed(() => {
+//   return route.params.id ;  // Use a default value if id is missing
+// });
 
 // Array of images for the carousel
 const images = [
-  "/imgs/Frame 1000002895.png",
+  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F236047%2Fpexels-photo-236047.jpeg%3Fcs%3Dsrgb%26dl%3Dclouds-cloudy-countryside-236047.jpg%26fm%3Djpg&f=1&nofb=1&ipt=6b2eb5ccab7a0c6787f20167fcf73400772e8d96efe15960c036247ce945dde6&ipo=images",
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.EoVQuRwQe3tf6acMyDluQwHaDj%26pid%3DApi&f=1&ipt=3867412798f5f20fbdbc6ca70c4bff4cbec3eea4498ec8ff5bea464dd346802c&ipo=images",
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F236047%2Fpexels-photo-236047.jpeg%3Fcs%3Dsrgb%26dl%3Dclouds-cloudy-countryside-236047.jpg%26fm%3Djpg&f=1&nofb=1&ipt=6b2eb5ccab7a0c6787f20167fcf73400772e8d96efe15960c036247ce945dde6&ipo=images",
 ];

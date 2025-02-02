@@ -6,43 +6,28 @@
       <div class="w-[200px] h-[100vh] bg-[#2d2d2d]">
         <h1 class="text-[#fff] text-[28px] text-center my-2">Click</h1>
 
-        <ul
-          class=" flex flex-col justify-start p-4 text-[#fff]"
-        >
-        <router-link
-                  to="/setting/profile"
-                  class=""
-                >
-                <li class="my-2">Profile</li>
-              </router-link>
-          
-          <li class="my-2">Update Plan</li>
-          <li class="my-2">Admin Dashboard</li>
+        <ul class="flex flex-col justify-start p-4 text-[#fff]">
+          <router-link to="/setting/profile" class="">
+            <li class="my-2">Profile</li>
+          </router-link>
+          <router-link to="/setting/plan-details" class="">
+            <li class="my-2">Update Plan</li>
+          </router-link>
+          <router-link to="/setting/admin-dashboard" class="">
+            <li class="my-2">Admin Dashboard</li>
+          </router-link>
         </ul>
       </div>
       <!-- side bar  -->
-      <div class="w-[100%] gird grid-cols-1">
+      <div class="w-[100%] gird grid-cols-1 bg-gray-50">
         <div class="w-[100%]">
           <header class="!h-[60px] bg-[#fff] shadow-md grid grid-cols-2">
             <div class="flex justify-start items-center px-4">
-              <i class="cursor-pointer pi pi-angle-right"></i>
+              <router-link to="/" class="">
+                <i class="cursor-pointer pi pi-angle-right"></i>
+              </router-link>
             </div>
-            <!-- <div class="flex justify-center items-center mx-2">
-              <div class="w-[40px] flex justify-center items-center">
-                <i
-                  class="cursor-pointer text-[#222] pi pi-pencil"
-                  @click="useTopBar.toggleSidebar"
-                ></i>
-              </div>
-              <div
-                class="w-[40px] border-x-[2px] border-gray-300 mx-2 flex justify-center items-center"
-              >
-                <i class="pi pi-moon text-[#222]"></i>
-              </div>
-              <div class="w-[40px] flex justify-center items-center">
-                <i class="pi pi-link cursor-pointer text-[#222]"></i>
-              </div>
-            </div> -->
+      
             <div class="flex items-center justify-end px-4">
               <div>
                 <i class="pi pi-bell cursor-pointer"></i>
@@ -66,9 +51,9 @@
         </div>
 
         <!-- main -->
-        <div class=" w-[100%] h-[100%] ">
+        <div class="w-[100%] h-[100%]">
           <!-- <RouterView /> -->
-         <router-view />
+          <router-view />
         </div>
         <!--  -->
       </div>

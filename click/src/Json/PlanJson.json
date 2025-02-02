@@ -1,0 +1,94 @@
+{
+              "ad_management_plans": [
+                {
+                  "plan_name": "Basic",
+                  "plan_explain": "Get Started with Essential Tools",
+                  "plan_description": "Perfect for Freelancers and Small Businesses.",
+                  "price_per_month": "₹299",
+                  "original_price": "₹999",
+                  "discount": "Save 70%",
+                  "link_limit": "10 links",
+                  "click_tracking": "Yes (Basic)",
+                  "ideal_for": "Freelancers, Small Businesses",
+                  "features": [
+                            "10 links",
+                    "Basic click tracking",
+                    "Limited reporting",
+                    "Ideal for low-traffic campaigns",
+                    "Email support"
+                  ]
+                },
+                {
+                  "plan_name": "Starter",
+                  "plan_explain": "Ignite Your Business Journey",
+                  "plan_description": "Essential Tools for New and Growing Ventures.",
+                  "price_per_month": "₹599",
+                  "original_price": "₹1,999",
+                  "discount": "Save 70%",
+                  "link_limit": "50 links",
+                  "click_tracking": "Yes (Advanced)",
+                  "ideal_for": "Growing Startups, Agencies",
+                  "features": [
+                            "50 links",
+                    "Advanced click tracking",
+                    "Real-time reporting",
+                    "Seamless online ordering system",
+                    "Priority email support"
+                  ]
+                },
+                {
+                  "plan_name": "Growth",
+                  "plan_explain": "Accelerate Your Business Expansion",
+                  "plan_description": "The Perfect Fit for Ambitious and Scaling Businesses.",
+                  "price_per_month": "₹999",
+                  "original_price": "₹3,499",
+                  "discount": "Save 71.5%",
+                  "link_limit": "150 links",
+                  "click_tracking": "Yes (Advanced)",
+                  "ideal_for": "Mid-size Businesses",
+                  "features": [
+                            "150 links",
+                    "Advanced click tracking",
+                    "Comprehensive analytics",
+                    "Integration with third-party tools",
+                    "24×7 support"
+                  ]
+                },
+                {
+                  "plan_name": "Pro",
+                  "plan_explain": "Powerful Tools for Large Enterprises",
+                  "plan_description": "Designed for Businesses That Demand More Control and Insights.",
+                  "price_per_month": "₹1999",
+                  "original_price": "₹5,999",
+                  "discount": "Save 66.7%",
+                  "link_limit": "500 links",
+                  "click_tracking": "Yes (Real-time Analytics)",
+                  "ideal_for": "Large Businesses, Enterprises",
+                  "features": [
+                            "500 links",
+                    "Real-time analytics",
+                    "AI-powered insights",
+                    "API access for integrations",
+                    "Dedicated account manager"
+                  ]
+                },
+                {
+                  "plan_name": "Enterprise",
+                  "plan_explain": "Maximize Your Business Potential",
+                  "plan_description": "Comprehensive Features for High-Performing Enterprises.",
+                  "price_per_month": "Custom",
+                  "original_price": "Custom",
+                  "discount": "Custom Discount",
+                  "link_limit": "Unlimited Links",
+                  "click_tracking": "Yes (Full Report + API Access)",
+                  "ideal_for": "High-Traffic Advertisers",
+                  "features": [
+                          "Unlimited Links",
+                    "Unlimited tracking & reports",
+                    "Full API access",
+                    "Custom integrations",
+                    "Premium support with a dedicated team"
+                  ]
+                }
+              ]
+            }
