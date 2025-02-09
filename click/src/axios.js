@@ -1,5 +1,4 @@
 import axios from 'axios';
+console.log("Base URL:", axios.defaults.baseURL);
 
-// axios.defaults.baseURL =`${window.location.origin`http://127.0.0.1:5000/`}`;
-
-axios.defaults.baseURL = process.env.VUE_APP_BASE_URL;
+axios.defaults.baseURL = `https://api.think.ind.in/api/`;

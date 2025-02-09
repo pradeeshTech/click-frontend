@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import axios from 'axios'
 
 export const useApiStore = defineStore('api', () => {
-
+  axios.defaults.baseURL = `https://api.think.ind.in/api/`;
   const getMethod = async (url) => {
     try {
       const response = await axios.get(url);
