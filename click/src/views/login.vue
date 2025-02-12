@@ -70,6 +70,7 @@ import { useApiStore } from "@/api";
 import { useCommon } from "@/stores/common";
 import popup from "@/components/popup.vue";
 import { useRouter } from "vue-router";
+
 const router = useRouter();
 
 const useApi = useApiStore();
@@ -96,7 +97,7 @@ async function signIn() {
     console.log(res, "res ::");
 
     if (res) {
-      const { token, message } = res;
+      const { token, message ,user } = res;
 
       if (!token) {
         // Handle case where token is missing
@@ -110,7 +111,11 @@ async function signIn() {
         Common.toaster.Message = message || "Operation successful.";
         // Optionally, store the token (e.g., in localStorage or Vuex/Pinia)
         localStorage.setItem("authToken", token);
-        router.push({ name: "home" }); // Change "Dashboard" to your desired route name
+        localStorage.setItem("user", JSON.stringify(user));
+
+        setTimeout(()=>{
+          router.push({ name: "home" }); // Change "Dashboard" to your desired route name
+        },1000)
       }
     } else {
       // Handle unexpected response format

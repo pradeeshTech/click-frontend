@@ -1,6 +1,6 @@
 <template>
   <div
-    class="top-[0px] flex w-[100%] justify-center h-[400px] !z-[1000] border-[1px] border-[#000]"
+    class="top-[0px] flex w-[100%] justify-center !z-[1000] "
   >
     {{ popuptest }}
     <div
@@ -22,7 +22,7 @@
   </div>
 </template>
                         
-                        <script setup>
+<script setup>
 import { ref, computed, defineProps, onMounted, watch } from "vue";
 // import { usePosDashboard } from "@/stores/pos/posDashboard";
 import { useCommon } from "@/stores/common";

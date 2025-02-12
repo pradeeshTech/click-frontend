@@ -19,18 +19,25 @@
         <i class="pi pi-link cursor-pointer text-[#222]"></i>
       </div>
     </div>
-    <div class="flex items-center justify-end px-4">
-      <div>
-        <i class="pi pi-bell cursor-pointer"></i>
-      </div>
 
-      <div class="relative mx-2 dropdown">
-        <router-link
-            to="/setting/profile"
-            class="p-2 hover:bg-[#eff4ff] rounded-md cursor-pointer block"
-          >
-            <i class="pi pi-cog mx-2 cursor-pointer" ></i>
-          </router-link>
+    <div class="flex items-center justify-end px-4">
+      <div
+        @click="dropdown = true"
+        class="p-2 hover:bg-[#eff4ff] rounded-md cursor-pointer block"
+      >
+        <i class="pi pi-sign-out cursor-pointer mx-2"></i>
+      </div>
+      <div class="p-2 hover:bg-[#eff4ff] rounded-md cursor-pointer block">
+        <i class="pi pi-bell cursor-pointer mx-2"></i>
+      </div>
+      <router-link
+        to="/setting/profile"
+        class="p-2 hover:bg-[#eff4ff] rounded-md cursor-pointer block"
+      >
+        <i class="pi pi-cog mx-2 cursor-pointer"></i>
+      </router-link>
+
+      <div class="mx-2 dropdown">
         <!-- <i
           @click="dropdown = !dropdown"
           class="pi pi-cog mx-2 cursor-pointer"
@@ -62,14 +69,50 @@
         <span class="text-[12px]">AP</span>
       </div>
     </div>
+
+    <div
+      v-if="dropdown"
+      class="bg-[#00000045] z-[11] absolute h-[100vh] w-[100%] flex justify-center items-center"
+    >
+      <div class="h-[160px] rounded-[16px] w-[340px] bg-[#ffff] p-[16px]">
+        <p class="text-center my-2">
+          <i class="pi pi pi-sign-out cursor-pointer"></i>
+        </p>
+        <p class="text-center">Do you want to Exit</p>
+        <div class="flex justify-center my-4">
+          <button
+            @click="dropdown = false"
+            class="text-[14px] border-[1px] border-[#2d2d2d] px-[12px] rounded-[6px] mx-1"
+          >
+            No
+          </button>
+          <button
+            @click="logout"
+            class="text-[#fff] text-[14px] bg-[#2d2d2d] px-[12px] rounded-[6px] mx-1"
+          >
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 <script setup >
 import { ref } from "vue";
 import { useTopBarStore } from "@/stores/topbar";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const useTopBar = useTopBarStore();
 const dropdown = ref(false);
+
+function logout() {
+  dropdown.value = false;
+  localStorage.removeItem("authToken");
+  localStorage.removeItem("user");
+  router.push({ name: "login" }); // Change "Dashboard" to your desired route name
+}
 </script>
 
 <style>
